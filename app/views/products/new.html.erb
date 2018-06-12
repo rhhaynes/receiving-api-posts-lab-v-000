@@ -23,7 +23,7 @@ $(function(){
   $('form').on('submit',function(e){
     e.preventDefault();
     const values  = $(this).serialize();
-    const posting = $.post('', values)
+    const posting = $.post('/products', values)
     posting.done();
   });
 });
