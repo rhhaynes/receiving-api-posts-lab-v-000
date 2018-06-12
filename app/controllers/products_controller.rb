@@ -18,7 +18,8 @@ class ProductsController < ApplicationController
   end
 
   def create
-    Product.create(product_params)
+    @product = Product.create(product_params)
+    render :json => @product, :status => 201
     redirect_to products_path
   end
 
