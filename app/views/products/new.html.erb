@@ -24,8 +24,11 @@ $(function(){
     e.preventDefault();
     const values  = $(this).serialize();
     const posting = $.post('/products', values);
-    debugger;
-    // posting.done();
+    posting.done(function(data){
+      $(.productName).text(data.name);
+      $(.productPrice).text(data.price);
+      $(.productDescription).text(data.description);
+    });
   });
 });
 </script>
