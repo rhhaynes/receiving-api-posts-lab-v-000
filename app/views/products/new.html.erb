@@ -25,9 +25,9 @@ $(function(){
     const values  = $(this).serialize();
     const posting = $.post('/products', values);
     posting.done(function(data){
-      $(h3.productName).text(data.name);
-      $(p.productPrice).text(data.price);
-      $(p.productDescription).text(data.description);
+      $(.productName).text(data.name);
+      $(.productPrice).text(data.price);
+      $(.productDescription).text(data.description);
     });
   });
 });
