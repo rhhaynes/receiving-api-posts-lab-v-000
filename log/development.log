@@ -1899,3 +1899,22 @@ Cannot render console from 73.99.9.74! Allowed networks: 127.0.0.1, ::1, 127.0.0
 Processing by ProductsController#new as HTML
   Rendered products/new.html.erb within layouts/application (2.1ms)
 Completed 200 OK in 18ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 73.99.9.74 at 2018-06-12 17:10:59 +0000
+Cannot render console from 73.99.9.74! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 73.99.9.74 at 2018-06-12 17:11:10 +0000
+Cannot render console from 73.99.9.74! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2wJkfRN7s70g2R1gdpQl7ex1oBtrUDtail9IUfSfZaqoIDJKTUj2kRXYpZHCxbvNT2wXgRrzf3dT4touKWDdzQ==", "product"=>{"name"=>"TV", "price"=>"999", "description"=>"fjidhfdioshfdiohfdsiofh", "inventory"=>"2"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "TV"], ["description", "fjidhfdioshfdiohfdsiofh"], ["inventory", 2], ["price", 999], ["created_at", "2018-06-12 17:11:10.817030"], ["updated_at", "2018-06-12 17:11:10.817030"]]
+  [1m[35m (48.6ms)[0m  commit transaction
+[active_model_serializers]   [1m[36mOrder Load (0.1ms)[0m  [1mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 32]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (1.99ms)
+Completed 201 Created in 54ms (Views: 2.5ms | ActiveRecord: 49.0ms)
